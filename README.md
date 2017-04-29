@@ -13,7 +13,7 @@ Conway's Game of Life implemented with React and the Redux store.
 
 ### Deploy on Heroku
 
-- setup local git repository first, then execute commands
+- setup local git repository and login to heroku first, then execute commands with your app name.
 - `heroku create YOUR-APP-NAME-HERE --buildpack https://github.com/mars/create-react-app-buildpack.git`
 - `heroku git:remote -a YOUR-APP-NAME-HERE`
 - `git push heroku master`
