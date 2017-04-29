@@ -16,7 +16,6 @@ Conway's Game of Life implemented with React and the Redux store.
 - [Build the Game of Life](https://www.freecodecamp.com/challenges/build-the-game-of-life)
 
 ### User Stories
-(from the fcc website)
 
 - When I first arrive at the game, it will randomly generate a board and start playing.
 - I can start and stop the board.
