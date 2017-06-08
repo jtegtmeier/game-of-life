@@ -1,17 +1,17 @@
-export const setCellAlive = (cellLocation) => ({
+export const setCellAlive = (cell) => ({
   type: 'SET_CELL_ALIVE',
   payload: {
-    x: cellLocation.x,
-    y: cellLocation.y,
+    x: cell.x,
+    y: cell.y,
     isAlive: true
   })
 }
 
-export const setCellDead = (cellLocation) => ({
+export const setCellDead = (cell) => ({
   type: 'SET_CELL_DEAD',
   payload: {
-    x: cellLocation.x,
-    y: cellLocation.y,
+    x: cell.x,
+    y: cell.y,
     isAlive: false
   })
 }
@@ -37,4 +37,12 @@ export const setGameSpeed = (speed) => ({
 
 export const toggleViewCellHistory = () => ({
   type: 'TOGGLE_VIEW_CELL_HISTORY'
+})
+
+export const toggleBordersWrap = () => ({
+  type: 'TOGGLE_BORDERS_WRAP'
+})
+
+export const getNextGeneration = () => ({
+  type: 'GET_NEXT_GENERATION'
 })

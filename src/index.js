@@ -4,9 +4,19 @@ import { createStore } from 'redux';
 import { Provider } from 'react-redux';
 import reducer from './reducers';
 import App from './GameOfLifeApp';
+import {getBlankCells} from './utils'
 import './style/index.css';
 
-const appStore = createStore(reducer)
+const initialState = {
+  cells: getBlankCells(),
+  options: {
+    running: true,
+    viewHistory: true,
+    gameSpeed: 1
+  }
+}
+
+const appStore = createStore(reducer, initialState)
 
 ReactDOM.render(
   <Provider store={appStore}>
