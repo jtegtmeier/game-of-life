@@ -1,18 +1,14 @@
-export const setCellAlive = (cell) => ({
+export const setCellAlive = (cellId) => ({
   type: 'SET_CELL_ALIVE',
   payload: {
-    x: cell.x,
-    y: cell.y,
-    isAlive: true
+    id: cellId
   })
 }
 
-export const setCellDead = (cell) => ({
+export const setCellDead = (cellId) => ({
   type: 'SET_CELL_DEAD',
   payload: {
-    x: cell.x,
-    y: cell.y,
-    isAlive: false
+    id: cellId
   })
 }
 
@@ -43,6 +39,6 @@ export const toggleBordersWrap = () => ({
   type: 'TOGGLE_BORDERS_WRAP'
 })
 
-export const getNextGeneration = () => ({
-  type: 'GET_NEXT_GENERATION'
-})
+// export const getNextGeneration = () => ({
+//   type: 'GET_NEXT_GENERATION'
+// })

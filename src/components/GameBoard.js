@@ -14,7 +14,7 @@ GameBoard.propTypes = {
     isAlive: PropTypes.bool.isRequired,
     timeLength: PropTypes.number
   }).isRequired).isRequired,
-  onCellClick: PropTypes.func.isRequired
+  handleCellClick: PropTypes.func.isRequired
 }
 
 export default GameBoard

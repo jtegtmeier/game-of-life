@@ -1,13 +1,23 @@
 import React from 'react';
 import PropTypes from 'prop-types'
-import {GameBoard, Options} from './Containers'
+import {GameBoardContainer, OptionsContainer} from '../containers'
 import '../style/GameOfLifeApp.css';
 
-const GameOfLifeApp () => (
+const GameOfLifeApp (game) => (
   <div className="GameOfLifeApp">
-    <GameBoard/>
-    <Options/>
+    <GameBoardContainer />
+    <OptionsContainer />
   </div>
 )
+
+// GameOfLifeApp.propTypes = {
+//   game: PropTypes.shape({
+//     cells: PropTypes.array.isRequired,
+//     handleCellClick: PropTypes.func.isRequired,
+//     handleResetClick: PropTypes.func.isRequired,
+//     handleRunClick: PropTypes.func.isRequired,
+//     currentOptions: PropTypes.object
+//   })
+// }
 
 export default GameOfLifeApp;

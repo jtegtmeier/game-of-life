@@ -3,8 +3,12 @@ import  PropTypes from 'prop-types'
 
 const Cell = (props) => {
   return (
-    <div />
+    <div style={isAlive?{background: "green"}:{background: "black"}}/>
   )
+}
+
+Cell.propTypes = {
+  isAlive: PropTypes.bool.isRequired
 }
 
 export default Cell

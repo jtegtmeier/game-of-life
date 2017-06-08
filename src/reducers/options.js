@@ -1,17 +1,34 @@
-const options = (state, action){
+const options = (previousState, action){
   switch(action.type){
     case 'RESET_BOARD':
-      //TODO clear the board, all cells dead
+      return {
+        ...previousState,
+        {isRunning: false},
+        {cells: previousState.cells.map((cell)=>cell.isAlive=false)}
+      }
     case 'GENERATE_RANDOM_CELLS':
-      //TODO generate random cells
+      return {
+        ...previousState,
+        {isRunning: false},
+        {cells: previousState.cells.forEach((cell)=>cell.isAlive=(Math.random()>.49?true:false))}
+      }
     case 'TOGGLE_GAME_RUNNING':
-      //TODO start/stop the game
+      return {
+        ...previousState,
+        {isRunning: !isRunning}
+      }
     case 'SET_GAME_SPEED':
-      //TODO set game speed
+      return {
+        ...previousState,
+        {gameSpeed: action.payload.gameSpeed}
+      }
     case 'TOGGLE_VIEW_CELL_HISTORY':
-      //TODO turn on/off cell history info view
+      return {
+        ...previousState,
+        {viewCellHistory: !viewCellHistory}
+      }
     default:
-      return state;
+      return previousState
   }
 }
 
