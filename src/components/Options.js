@@ -2,8 +2,10 @@ import React from 'react'
 import  PropTypes from 'prop-types'
 
 const Options = (props) => (
-    <button onClick={props.handleResetClick}>Reset</button>
-    <button onClick={props.handleRunClick}>Run</button>
+    <div>
+      <button onClick={props.handleResetClick}>Reset</button>
+      <button onClick={props.handleRunClick}>Run</button>
+    </div>
   )
 
 Options.propTypes = {

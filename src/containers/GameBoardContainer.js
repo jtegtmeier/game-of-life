@@ -1,6 +1,6 @@
 import React from 'react'
 import  PropTypes from 'prop-types'
-import GameBoard from '../components'
+import GameBoard from '../components/GameBoard'
 
 class GameBoardContainer extends React.Component{
   constructor(props){
@@ -8,7 +8,8 @@ class GameBoardContainer extends React.Component{
   }
   render(){
     return(
-      <GameBoard cells={game.cells} handleCellClick={game.handleCellClick}/>
+      <div></div>
+      //<GameBoard cells={game.cells} handleCellClick={game.handleCellClick}/>
     )
   }
 }

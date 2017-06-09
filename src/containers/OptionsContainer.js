@@ -1,6 +1,6 @@
 import React from 'react'
 import  PropTypes from 'prop-types'
-import Options from '../components'
+import Options from '../components/Options'
 
 class OptionsContainer extends React.Component {
   constructor(props){
@@ -8,11 +8,12 @@ class OptionsContainer extends React.Component {
   }
   render(){
     return(
-      <Options
-        currentOptions={game.currentOptions}
-        handleResetClick={game.handleResetClick}
-        handleRunClick={game.handleRunClick}
-      />
+      <div></div>
+      // <Options
+      //   currentOptions={game.currentOptions}
+      //   handleResetClick={game.handleResetClick}
+      //   handleRunClick={game.handleRunClick}
+      // />
     )
   }
 }

@@ -1,9 +1,10 @@
 import React from 'react';
-import PropTypes from 'prop-types'
-import {GameBoardContainer, OptionsContainer} from '../containers'
-import '../style/GameOfLifeApp.css';
+//import PropTypes from 'prop-types'
+import OptionsContainer from '../containers/OptionsContainer'
+import GameBoardContainer from '../containers/GameBoardContainer'
+import '../style/GameOfLifeApp.css'
 
-const GameOfLifeApp (game) => (
+const GameOfLifeApp = (game) => (
   <div className="GameOfLifeApp">
     <GameBoardContainer />
     <OptionsContainer />

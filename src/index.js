@@ -1,11 +1,11 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import { createStore } from 'redux';
-import { Provider } from 'react-redux';
-import reducer from './reducers';
-import App from './GameOfLifeApp';
-import {getBlankCells} from './utils'
-import './style/index.css';
+import React from 'react'
+import ReactDOM from 'react-dom'
+import { createStore } from 'redux'
+import { Provider } from 'react-redux'
+import reducer from './reducers'
+import GameOfLifeApp from './components/GameOfLifeApp'
+import { getBlankCells } from './utils'
+import './style/index.css'
 
 const initialState = {
   cells: getBlankCells(),
@@ -23,4 +23,4 @@ ReactDOM.render(
     <GameOfLifeApp />
   </Provider>,
   document.getElementById('root')
-);
+)
