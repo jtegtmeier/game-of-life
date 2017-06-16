@@ -1,3 +1,19 @@
 .GameOfLifeApp {
-  background-color: black;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.gameBoardRow {
+  display: flex;
+  flex-flow: row;
+}
+
+.gameBoardCell {
+  width: 15px;
+  height: 15px;
+  box-sizing: border-box;
+  border: 1px solid #666;
+  border-radius: 1px;
 }

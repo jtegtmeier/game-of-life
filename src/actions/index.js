@@ -1,16 +1,25 @@
-export const setCellAlive = (cellId) => ({
-  type: 'SET_CELL_ALIVE',
+export const toggleCellAlive = (row,col) => ({
+  type: 'TOGGLE_CELL_ALIVE',
   payload: {
-    id: cellId
-  })
-}
+    row: row,
+    col: col
+  }
+})
 
-export const setCellDead = (cellId) => ({
-  type: 'SET_CELL_DEAD',
-  payload: {
-    id: cellId
-  })
-}
+export const updateCells = cells => ({
+  type: 'UPDATE_CELLS',
+  payload: cells
+})
+
+export const setIntervalId = (intervalId) => ({
+  type: 'SET_INTERVAL_ID',
+  payload: intervalId
+})
+
+export const setBoardSize = size => ({
+  type: 'SET_BOARD_SIZE',
+  payload: size
+})
 
 export const resetBoard = () => ({
   type: 'RESET_BOARD'
@@ -20,8 +29,16 @@ export const generateRandomCells = () => ({
   type: 'GENERATE_RANDOM_CELLS'
 })
 
-export const toggleGameRunning = () => ({
-  type: 'TOGGLE_GAME_RUNNING'
+export const startGame = () => ({
+  type: 'START_GAME'
+})
+
+export const pauseGame = () => ({
+  type: 'PAUSE_GAME'
+})
+
+export const resetGame = () => ({
+  type: 'RESET_GAME'
 })
 
 export const setGameSpeed = (speed) => ({
@@ -38,7 +55,3 @@ export const toggleViewCellHistory = () => ({
 export const toggleBordersWrap = () => ({
   type: 'TOGGLE_BORDERS_WRAP'
 })
-
-// export const getNextGeneration = () => ({
-//   type: 'GET_NEXT_GENERATION'
-// })

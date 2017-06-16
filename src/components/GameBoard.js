@@ -1,19 +1,34 @@
 import React from 'react'
 import  PropTypes from 'prop-types'
 
-const GameBoard = (props) => {
+const deadColor = (history) => {
+  switch (history) {
+    case 5: return '#550'
+    case 4: return '#440'
+    case 3: return '#330'
+    case 2: return '#220'
+    case 1: return '#110'
+    default: return '#000'
+
+  }
+}
+
+const GameBoard = ({cells, handleCellClick}) => {
+  const board = cells.map((row,y) =>
+      <div className="gameBoardRow" key={y}>
+        {row.map((col,x) => <div onClick={()=>handleCellClick(y,x)} className="gameBoardCell" key={x} style={col.isAlive ? {background: "#090"}:{background: deadColor(col.history)}}/>
+      )}</div>
+  )
+
   return (
-    <div />
+    <div>
+      {board}
+    </div>
   )
 }
 
 GameBoard.propTypes = {
-  cells: PropTypes.arrayOf(PropTypes.shape({
-    x: PropTypes.number.isRequired,
-    y: PropTypes.number.isRequired,
-    isAlive: PropTypes.bool.isRequired,
-    timeLength: PropTypes.number
-  }).isRequired).isRequired,
+  cells: PropTypes.array.isRequired,
   handleCellClick: PropTypes.func.isRequired
 }
 

@@ -1,27 +1,25 @@
 import React from 'react'
-import  PropTypes from 'prop-types'
+import PropTypes from 'prop-types'
+import { connect } from 'react-redux'
+import { toggleCellAlive } from '../actions'
 import GameBoard from '../components/GameBoard'
 
-class GameBoardContainer extends React.Component{
-  constructor(props){
-    super(props)
-  }
-  render(){
-    return(
-      <div></div>
-      //<GameBoard cells={game.cells} handleCellClick={game.handleCellClick}/>
-    )
-  }
+const GameBoardContainer = ({cells, toggleCellAlive}) => {
+  return(
+    <GameBoard cells={cells} handleCellClick={toggleCellAlive}/>
+  )
 }
 
 GameBoardContainer.propTypes = {
-  cells: PropTypes.arrayOf(PropTypes.shape({
-    x: PropTypes.number.isRequired,
-    y: PropTypes.number.isRequired,
-    isAlive: PropTypes.bool.isRequired,
-    timeLength: PropTypes.number
-  }).isRequired).isRequired,
-  handleCellClick: PropTypes.func.isRequired
+  cells: PropTypes.array.isRequired,
+  toggleCellAlive: PropTypes.func.isRequired
 }
 
-export default GameBoardContainer
+const mapStateToProps = (state) => ({
+  cells: state.gameboard.cells
+})
+
+export default connect(
+  mapStateToProps,
+  { toggleCellAlive }
+)(GameBoardContainer)

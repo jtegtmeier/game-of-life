@@ -1,21 +1,12 @@
-const options = (previousState, action) => {
+const options = (previousState = {
+  isRunning: false,
+  gameSpeed: 1,
+  viewCellHistory: true}, action) => {
   switch(action.type){
-    case 'RESET_BOARD':
+    case 'SET_INTERVAL_ID':
       return {
         ...previousState,
-        isRunning: false,
-        cells: previousState.cells.map((cell)=>cell.isAlive=false)
-      }
-    case 'GENERATE_RANDOM_CELLS':
-      return {
-        ...previousState,
-        isRunning: false,
-        cells: previousState.cells.forEach((cell)=>cell.isAlive=(Math.random()>.49?true:false))
-      }
-    case 'TOGGLE_GAME_RUNNING':
-      return {
-        ...previousState,
-        isRunning: !previousState.isRunning
+        intervalId: action.payload
       }
     case 'SET_GAME_SPEED':
       return {

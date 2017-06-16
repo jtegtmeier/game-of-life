@@ -4,7 +4,7 @@ import OptionsContainer from '../containers/OptionsContainer'
 import GameBoardContainer from '../containers/GameBoardContainer'
 import '../style/GameOfLifeApp.css'
 
-const GameOfLifeApp = (game) => (
+const GameOfLifeApp = () => (
   <div className="GameOfLifeApp">
     <GameBoardContainer />
     <OptionsContainer />

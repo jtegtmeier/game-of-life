@@ -1,22 +1,13 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import { createStore } from 'redux'
+import { createStore, applyMiddleware } from 'redux'
 import { Provider } from 'react-redux'
 import reducer from './reducers'
+import { gameMiddleware } from './middleware'
 import GameOfLifeApp from './components/GameOfLifeApp'
-import { getBlankCells } from './utils'
 import './style/index.css'
 
-const initialState = {
-  cells: getBlankCells(),
-  options: {
-    running: true,
-    viewHistory: true,
-    gameSpeed: 1
-  }
-}
-
-const appStore = createStore(reducer, initialState)
+const appStore = createStore(reducer, applyMiddleware(gameMiddleware))
 
 ReactDOM.render(
   <Provider store={appStore}>
