@@ -4,11 +4,11 @@ import { connect } from 'react-redux'
 import { toggleCellAlive } from '../actions'
 import GameBoard from '../components/GameBoard'
 
-const GameBoardContainer = ({cells, toggleCellAlive}) => {
-  return(
-    <GameBoard cells={cells} handleCellClick={toggleCellAlive}/>
-  )
-}
+const GameBoardContainer = ({cells, toggleCellAlive}) => (
+  <GameBoard
+    cells={cells}
+    handleCellClick={toggleCellAlive}/>
+)
 
 GameBoardContainer.propTypes = {
   cells: PropTypes.array.isRequired,

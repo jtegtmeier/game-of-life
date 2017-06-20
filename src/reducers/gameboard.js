@@ -1,6 +1,6 @@
 import { getDeadCells } from '.././utils'
 
-const gameboard = (previousState = {cells: getDeadCells(50), boardSize: 50}, action) => {
+const gameboard = (previousState = { cells: getDeadCells(20) }, action) => {
   let changedCells
   switch(action.type){
     case 'TOGGLE_CELL_ALIVE':
@@ -15,12 +15,6 @@ const gameboard = (previousState = {cells: getDeadCells(50), boardSize: 50}, act
       return {
         ...previousState,
         cells: action.payload
-      }
-    case 'SET_BOARD_SIZE':
-      return {
-        ...previousState,
-        boardSize: action.payload,
-        cells: getDeadCells(action.payload)
       }
     default:
       return previousState

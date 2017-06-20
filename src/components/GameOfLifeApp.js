@@ -1,24 +1,24 @@
-import React from 'react';
-//import PropTypes from 'prop-types'
-import OptionsContainer from '../containers/OptionsContainer'
+import React, {Component} from 'react';
+import OptionsContainer from '../containers/Options'
+import {generateRandomCells, startGame} from '../actions'
 import GameBoardContainer from '../containers/GameBoardContainer'
+import { connect } from 'react-redux'
 import '../style/GameOfLifeApp.css'
 
-const GameOfLifeApp = () => (
-  <div className="GameOfLifeApp">
-    <GameBoardContainer />
-    <OptionsContainer />
-  </div>
-)
+class GameOfLifeApp extends Component{
+  componentDidMount() {
+    this.props.generateRandomCells()
+    this.props.startGame()
+  }
 
-// GameOfLifeApp.propTypes = {
-//   game: PropTypes.shape({
-//     cells: PropTypes.array.isRequired,
-//     handleCellClick: PropTypes.func.isRequired,
-//     handleResetClick: PropTypes.func.isRequired,
-//     handleRunClick: PropTypes.func.isRequired,
-//     currentOptions: PropTypes.object
-//   })
-// }
+  render(){
+    return(
+      <div className="GameOfLifeApp">
+        <OptionsContainer />
+        <GameBoardContainer />
+      </div>
+    )
+  }
+}
 
-export default GameOfLifeApp;
+export default connect((state)=>state, { generateRandomCells, startGame })(GameOfLifeApp)

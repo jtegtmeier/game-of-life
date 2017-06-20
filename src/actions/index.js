@@ -48,10 +48,6 @@ export const setGameSpeed = (speed) => ({
   }
 })
 
-export const toggleViewCellHistory = () => ({
-  type: 'TOGGLE_VIEW_CELL_HISTORY'
-})
-
-export const toggleBordersWrap = () => ({
-  type: 'TOGGLE_BORDERS_WRAP'
+export const toggleCellHistory = () => ({
+  type: 'TOGGLE_CELL_HISTORY'
 })

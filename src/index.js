@@ -6,6 +6,9 @@ import reducer from './reducers'
 import { gameMiddleware } from './middleware'
 import GameOfLifeApp from './components/GameOfLifeApp'
 import './style/index.css'
+import injectTapEventPlugin from 'react-tap-event-plugin'
+
+injectTapEventPlugin()
 
 const appStore = createStore(reducer, applyMiddleware(gameMiddleware))
 
