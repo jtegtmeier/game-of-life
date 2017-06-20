@@ -41,6 +41,10 @@ export const resetGame = () => ({
   type: 'RESET_GAME'
 })
 
+export const resetGenerations = () => ({
+  type: 'RESET_GENERATIONS'
+})
+
 export const setGameSpeed = (speed) => ({
   type: 'SET_GAME_SPEED',
   payload: {

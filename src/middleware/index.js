@@ -1,4 +1,4 @@
-import { updateCells, setIntervalId } from '../actions'
+import { updateCells, setIntervalId, resetGenerations } from '../actions'
 import { getNeighbourCount, getDeadCells, getRandomCell } from '../utils'
 
 export const gameMiddleware = store => next => action => {
@@ -34,7 +34,7 @@ export const gameMiddleware = store => next => action => {
           }
       })})
       store.dispatch(updateCells(nextGeneration))
-    }, 250)
+    }, 200)
     store.dispatch(setIntervalId(intervalId))
   }
   else if(action.type === 'PAUSE_GAME') {
@@ -43,6 +43,7 @@ export const gameMiddleware = store => next => action => {
   else if(action.type === 'RESET_GAME') {
     clearInterval(store.getState().options.intervalId)
     store.dispatch(updateCells(nextGeneration))
+    store.dispatch(resetGenerations())
   }
   else if(action.type === 'GENERATE_RANDOM_CELLS'){
     store.dispatch(

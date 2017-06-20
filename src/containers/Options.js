@@ -10,13 +10,17 @@ const Options = ({
   generateRandomCells,
   toggleCellHistory,
   boardSize,
+  generationNum,
   setBoardSize
 }) => (
   <div className="Options">
-    <div>
-      <button onClick={startGame}><i className="fa fa-play fa-2x" /></button>
-      <button onClick={pauseGame}><i className="fa fa-pause fa-2x" /></button>
-      <button onClick={resetGame}><i className="fa fa-trash fa-2x" /></button>
+    <div className="boardOptions">
+      <div>
+        <button onClick={startGame}><i className="fa fa-play fa-2x" /></button>
+        <button onClick={pauseGame}><i className="fa fa-pause fa-2x" /></button>
+        <button onClick={resetGame}><i className="fa fa-trash fa-2x" /></button>
+      </div>
+      <div style={{color: "white", marginTop: "2vh"}}>Generations: {generationNum}</div>
     </div>
     <div className="boardOptions">
       <label style={{color: "white"}}>Board Size: {boardSize}</label>
@@ -33,11 +37,13 @@ Options.propTypes = {
   pauseGame: PropTypes.func.isRequired,
   generateRandomCells: PropTypes.func.isRequired,
   toggleCellHistory: PropTypes.func.isRequired,
-  setBoardSize: PropTypes.func.isRequired
+  setBoardSize: PropTypes.func.isRequired,
+  generationNum: PropTypes.number.isRequired
 }
 
 const mapStateToProps = (state) => ({
   boardSize: state.options.boardSize,
+  generationNum: state.gameboard.generationNum,
 })
 
 const mapDispatchToProps = (dispatch) => ({
