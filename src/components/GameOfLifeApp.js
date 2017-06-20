@@ -14,6 +14,7 @@ class GameOfLifeApp extends Component{
   render(){
     return(
       <div className="GameOfLifeApp">
+        <h1 style={{color: "white"}}>Game of Life - React/Redux</h1>
         <OptionsContainer />
         <GameBoardContainer />
       </div>
