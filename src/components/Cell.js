@@ -12,24 +12,29 @@ const historyColor = (history) => {
   }
 }
 
-const style = (isAlive, history) => {
+const style = (isAlive, history, showHistory) => {
   if(isAlive){
     return ({
-      background: "#090"
+      background: '#090'
     })
   }
-  else{
+  else if(showHistory){
     return ({
       background: historyColor(history)
     })
   }
+  else{
+    return ({
+      background: '#000'
+    })
+  }
 }
 
-const Cell = ({row, col, isAlive, history, handleCellClick}) => (
-    <div 
+const Cell = ({row, col, isAlive, history, showHistory, handleCellClick}) => (
+    <div
       className="cell"
       onClick={() => handleCellClick(row,col)}
-      style={style(isAlive,history)}/>
+      style={style(isAlive,history,showHistory)}/>
 )
 
 Cell.propTypes = {
@@ -37,6 +42,7 @@ Cell.propTypes = {
   col: PropTypes.number.isRequired,
   isAlive: PropTypes.bool.isRequired,
   history: PropTypes.number.isRequired,
+  showHistory: PropTypes.bool.isRequired,
   handleCellClick: PropTypes.func.isRequired
 }
 

@@ -2,7 +2,7 @@ const options = (previousState = {
   isRunning: false,
   gameSpeed: 1,
   boardSize: 20,
-  viewCellHistory: true
+  showHistory: true
 }, action) => {
   switch(action.type){
     case 'SET_INTERVAL_ID':
@@ -18,7 +18,7 @@ const options = (previousState = {
     case 'TOGGLE_CELL_HISTORY':
       return {
         ...previousState,
-        viewCellHistory: !previousState.viewCellHistory
+        showHistory: !previousState.showHistory
       }
     case 'SET_BOARD_SIZE':
       return {

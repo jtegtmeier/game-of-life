@@ -2,7 +2,6 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 import { resetGame, startGame, pauseGame, generateRandomCells, toggleCellHistory, setBoardSize } from '../actions'
-//import Options from '../components/Options'
 
 const Options = ({
   resetGame,
@@ -14,14 +13,16 @@ const Options = ({
   setBoardSize
 }) => (
   <div className="Options">
-    <button onClick={resetGame}>Reset</button>
-    <button onClick={pauseGame}>Pause</button>
-    <button onClick={generateRandomCells}>Randomize</button>
-    <button onClick={startGame}>Run</button>
-    <button onClick={toggleCellHistory}>View Cell History</button>
-    <div style={{display: "flex", flexFlow: "column", alignItems: "center"}}>
+    <div>
+      <button onClick={startGame}><i className="fa fa-play fa-2x" /></button>
+      <button onClick={pauseGame}><i className="fa fa-pause fa-2x" /></button>
+      <button onClick={resetGame}><i className="fa fa-trash fa-2x" /></button>
+    </div>
+    <div className="boardOptions">
       <label style={{color: "white"}}>Board Size: {boardSize}</label>
       <input type="range" onChange={e => {setBoardSize(e.target.value)}} value={boardSize} step="10" min="20" max="50"/>
+      <button onClick={generateRandomCells}>Randomize</button>
+      <button onClick={toggleCellHistory}>Toggle Cell History</button>
     </div>
   </div>
 )
