@@ -2,6 +2,10 @@
 
 Conway's Game of Life implemented with React and the Redux store.
 
+[Demo](https://gameoflife-reactredux.herokuapp.com/)
+
+![screenshot](/public/gameoflife.png)
+
 ### Install and Run
 
 - `npm install`
