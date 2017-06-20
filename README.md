@@ -1,4 +1,4 @@
-# FCC React Exercises - Game of Life
+# Game of Life
 
 Conway's Game of Life implemented with React and the Redux store.
 
